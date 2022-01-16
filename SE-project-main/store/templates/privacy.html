@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+	<!-- banner-2 -->
+	<!-- <img src={% static "images/img1.png" %}/> -->
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		</div>
+		<div class="carousel-inner">
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/Home-Appliances.png' %}" class="d-block w-100" alt="..." style = "width:640px;height:360px" />
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>SALE | SALE | SALE</h5>
+			  <p>Some representative placeholder content for the first slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item active" data-bs-interval="2000">
+			<img src="{% static 'images/img1.png' %}" class="d-block w-100" alt="This is image" style = "width:640px;height:360px"/>
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Second slide label</h5>
+			  <p>Some representative placeholder content for the second slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img2.png' %}" class="d-block w-100" alt="This is image">
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Third slide label</h5>
+			  <p>Some representative placeholder content for the third slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img3.png' %}" class="d-block w-100" alt="This is image">
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Third slide label</h5>
+			  <p>Some representative placeholder content for the third slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img4.png' %}" class="d-block w-100" alt="This is image" style = "width:640px;height:360px"/>
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Second slide label</h5>
+			  <p>Some representative placeholder content for the second slide.</p>
+			</div> -->
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+						<i>|</i>
+					</li>
+					<li>Privacy Policy</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+	<!-- privacy -->
+	<div class="terms py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>P</span>rivacy
+				<span>P</span>olicy</h3>
+			<!-- //tittle heading -->
+			<h6 class="my-md-4 my-3">Privacy Policy</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">This privacy policy will help you understand how Arora Electro World uses and
+            protects the data you provide to us when you visit and use Arora Electro World.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">We reserve the right to change this policy at any given time, of which you will be promptly
+            updated. If you want to make sure that you are up to date with the latest changes, we advise you to frequently visit this page.</p>
+
+			<h6 class="my-md-4 my-3">What User Data We Collect</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">When you visit the website, we may collect the following data:</p>
+            <p class="font-weight-light pl-sm-4 mb-2">• Your contact information and email address.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">• Other information such as interests and preferences.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">• Data profile regarding your online behavior on our website.</p>
+
+			<h6 class="my-md-4 my-3">Why We Collect Your Data</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">We are collecting your data for several reasons:</p>
+			<p class="font-weight-light pl-sm-4 mb-2">• To better understand your needs.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">• To improve our services and products</p>
+            <p class="font-weight-light pl-sm-4 mb-2">• To send you promotional emails containing the information we think you will find interesting.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">• To contact you to fill out surveys and participate in other types of market research.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">• To customize our website according to your online behavior and personal preferences.</p>
+
+			<h6 class="my-md-4 my-3">Safeguarding and Securing the Data</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">Arora Electro World is committed to securing your data and keeping it confidential. Arora Electro World has done all in its
+            power to prevent data theft, unauthorized access, and disclosure by implementing the latest
+            technologies and software, which help us safeguard all the information we collect online.</p>
+
+			<h6 class="my-md-4 my-3">Our Cookie Policy</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">Once you agree to allow our website to use cookies, you also agree to use the data it collects
+            regarding your online behavior (analyze web traffic, web pages you spend the most time on,
+            and websites you visit).</p>
+            <p class="font-weight-light pl-sm-4 mb-2">The data we collect by using cookies is used to customize our website to your needs. After we
+            use the data for statistical analysis, the data is completely removed from our systems.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">Please note that cookies don't allow us to gain control of your computer in any way. They are
+            strictly used to monitor which pages you find useful and which you do not so that we can
+            provide a better experience for you.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">If you want to disable cookies, you can do it by accessing the settings of your internet browser.
+            (Provide links for cookie settings for major internet browsers).</p>
+
+			<h6 class="my-md-4 my-3">Links to Other Websites</h6>
+            <p class="font-weight-light pl-sm-4 mb-2">Our website contains links that lead to other websites. If you click on these links [name] is not
+            held responsible for your data and privacy protection. Visiting those websites is not governed by
+            this privacy policy agreement. Make sure to read the privacy policy documentation of the
+            website you go to from our website.</p>
+
+			<h6 class="my-md-4 mb-3">Restricting the Collection of your Personal Data</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">At some point, you might wish to restrict the use and collection of your personal data. You can
+            achieve this by doing the following:</p>
+            <p class="font-weight-light pl-sm-4 mb-2">When you are filling the forms on the website, make sure to check if there is a box which you
+            can leave unchecked, if you don't want to disclose your personal information.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">If you have already agreed to share your information with us, feel free to contact us via email
+            and we will be more than happy to change this for you.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">Arora Electro World will not lease, sell or distribute your personal information to any third parties, unless we
+            have your permission. We might do so if the law forces us. Your personal information will be
+            used when we need to send you promotional materials if you agree to this privacy policy</p>
+
+        </div>
+	</div>
+	<!-- //privacy -->
+{% endblock %}

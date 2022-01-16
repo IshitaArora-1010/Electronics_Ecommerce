@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+{% load cart %}
+<!-- banner-2 -->
+	 <!-- <img src={% static "images/img1.png" %}/> -->
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+						<i>|</i>
+					</li>
+					<li>Checkout</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+    <div class="faqs-w3l py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>C</span>heckout
+			</h3>
+			<!-- //tittle heading -->
+
+			<div class="wthree-help mb-sm-5 mb-4">
+                <div class="pb-5">
+                <h3 class="w3-head">Enter your delivery details</h3>
+                </div>
+                <form action="/check-out/" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Phone</label>
+                        <input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <select  class="form-control" aria-describedby="helpId" name="location" id="">
+                            <option value="Agar Nagar">Agar Nagar</option>
+                            <option value="Kitchlu Nagar">Kitchlu Nagar</option>
+                            <option value="Rajguru Nagar">Rajguru Nagar</option>
+                            <option value="Field Ganj">Field Ganj</option>
+                            <option value="Khud Mohalla">Khud Mohalla</option>
+                            <option value="Miller Ganj">Miller Ganj</option>
+                            <option value="Sarabha Nagar">Sarabha Nagar</option>
+                            <option value="BRS Nagar">BRS Nagar</option>
+                            <option value="Brown Road">Brown Road</option>
+                            <option value="Ghumar Mandi">Ghumar Mandi</option>
+                            <option value="Model Town">Model Town</option>
+                            <option value="New Shivaji Nagar">New Shivaji Nagar</option>
+                            <option value="New Hargobind Nagar">New Hargobind Nagar</option>
+                            <option value="Shivaji Nagar">Shivaji Nagar</option>
+                            <option value="Hargobind Nagar">Hargobind Nagar</option>
+                            <option value="Industrial Area">Industrial Area</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Address</label>
+                        <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Total Amount</label>
+                        <input type="text" name="total_price" id="" class="form-control" placeholder={{products|total_cart_price:request.session.cart}} aria-describedby="helpId">
+                    </div>
+                    <!-- PAYPAL BUTTONS HERE  -->
+
+                    <div id="paypal-button-container"></div>
+
+                    <!-- Include the PayPal JavaScript SDK -->
+                       <script src="https://www.paypal.com/sdk/js?client-id=Adw7xxhjDCk19dfRgusKRUukmCYbhvlDNj8LzGTBpkvwqEwjRlcR_SO64njSUiX0JlgZ3uUDoTvIWo5J&currency=INR"></script>
+
+
+                    <script>
+                        // Render the PayPal button into #paypal-button-container
+                        paypal.Buttons({
+
+                            // Set up the transaction
+                            createOrder: function (data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: {{products|total_cart_price:request.session.cart}}
+                                        }
+                                    }]
+                                });
+                            },
+
+                            // Finalize the transaction
+                            onApprove: function (data, actions) {
+                                return actions.order.capture().then(function (details) {
+                                    // Show a success message to the buyer
+                                    alert('Transaction completed by ' + details.payer.name
+                                        .given_name + '!');
+                                });
+                            }
+
+
+                        }).render('#paypal-button-container');
+                    </script>
+
+
+
+                    <!-- <div class="form-group">
+                        <label for="location">Payment Mode</label>
+                        <select  class="form-control" aria-describedby="helpId" name="Payment Mode" id="My Dropdown">
+                            <option value="Cash on Delivery">Cash on Delivery</option>
+                            <option value="Online Payment">Online Payment</option>
+                        </select>
+                    </div> -->
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1" name="pay_mode" required/>
+                        <label class="custom-control-label" for="customSwitch1">Cash on Delivery</label>
+                    </div>
+                <div class="pb-3 pt-3">
+                    <input type="submit" class="btn btn-outline-info border rounded col-lg-3" value="Submit">
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      
+        var dropdownName = "My Dropdown"; // Field name
+        var options = {
+            "Cash on Delivery": "/orders/", // Each option on a new line
+            "Online Payment": "/payment/",
+            // "Option Name" : "Redirect URL if this option is chosen"
+        }
+     
+        var selectInput = document.querySelectorAll('form select[name="' + dropdownName + '"]');
+     
+        window.instapageFormSubmitSuccess = function() {
+            for (var i = 0; i < selectInput.length; i++) {
+                var selectedOption = selectInput[i].value;
+                document.querySelectorAll('input[name="redirect"]')[i].value = options[selectedOption];
+            }
+        }
+    });
+
+</script>
+{% endblock javascripts %}
+

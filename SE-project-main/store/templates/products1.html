@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load cart %}
+{% load custom_filter %}
+{% load static %}
+
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+						<i>|</i>
+					</li>
+					<li>Products</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+	  <head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+		<title>Products</title>
+	  </head>
+
+	  <body>
+      <div class="container-fluid mt-3">
+	  <div class="row">
+
+		<!-- filter -->
+		<div class="col-lg-2 mx-auto">
+			<div class="list-group">
+				<a href="/product" class="list-group-item list-group-item-action">All Products</a>
+
+				{% for category in categories %}
+				<a href="/product/?category={{category.id}}" class="list-group-item list-group-item-action">{{category.name}}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<!-- all products -->
+		<div id='products' class="col-lg-10">
+			<div class="row mx-auto">
+				{% for product in products %}
+					<div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
+						<img src="{{product.image.url}}" class="card-img-top" alt="...">
+						<div class="card-body">
+						<a class="card-title" href="{% url 'product_detail' product.id %}"><p>{{product.name}}</p></a>
+						<a class="card-text" href="{% url 'product_detail' product.id %}"><p>{{product.price|currency}}</p></a>
+                        <!-- <a class="card-text" href="{% url 'product_detail' product.id %}"><b>{{product.description|safe}}</b></a> -->
+						<!-- {{product|is_in_cart:request.session.cart}} -->
+                        </div>
+
+                        <div class="card-footer p-0 no-gutters">
+						{% if product|is_in_cart:request.session.cart %}
+						<div class="row no-gutters">
+							<form action="/product/#{{product.id}}" class="col-2 " method="POST">
+								{% csrf_token %}
+								<input hidden type="text" name='product' value='{{product.id}}'>
+								<input hidden type="text" name='remove' value='True'>
+								<input type="submit" value=" - " class="btn btn-block btn-light border-right">
+							</form>
+							<div class="text-center col">{{product|cart_quantity:request.session.cart}} in Cart</div>
+							<form action="/product/#{{product.id}}" class="col-2 " method="POST">
+								{% csrf_token %}
+								<input hidden type="text" name='product' value='{{product.id}}'>
+								<input type="submit" value=" + " class="btn btn-block btn-light border-left">
+							</form>
+						</div>
+						{% else %}
+						<form action="/product/#{{product.id}}" method="POST" class="btn-block">
+							{% csrf_token %}
+							<input hidden type="text" name='product' value='{{product.id}}'>
+							<input type="submit" class="float-right btn btn-light  form-control" value="Add To Cart">
+						</form>
+						<!-- <div class="pb-3 pt-3">
+							<a href="{% url 'product_detail' product.id %}" class="btn btn-outline-info border rounded">See details</a>
+						</div> -->
+						{% endif %}
+
+
+					</div>
+
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+      </body>
+{% endblock %}

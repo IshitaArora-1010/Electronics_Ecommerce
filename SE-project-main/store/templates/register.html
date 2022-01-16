@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <!-- banner-2 -->
+	<!-- //banner-2 -->
+	<!-- page -->
+
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+						<i>|</i>
+					</li>
+					<li>Register</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+<div class="container mt-4">
+    <div class="p-4 m-4">
+        <div class="col-lg-5 rounded mx-auto border pt-4" style = "background:#c8cbcc;">
+            <div class="text-center col">
+
+
+            <!-- <hr> -->
+                <h3 class="tittle-w3l mb-lg-5 mb-sm-4 mb-3">
+                                <span>C</span>reate
+                                <span>A</span>ccount
+                </h3>
+            <hr>
+            </div>
+            <form action="/register/" method="POST">
+
+                {% csrf_token %}
+
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                <!-- firstname -->
+                <div class="form-group">
+                    <label for="">First Name</label>
+                    <input type="text" name="firstname"
+                     id="" value="{{values.first_name}}" class="form-control form-control-sm"
+                     placeholder="">
+                </div>
+
+                <!-- last name -->
+                <div class="form-group">
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastname"
+                    id="" value="{{values.last_name}}" class="form-control form-control-sm"
+                    >
+                </div>
+
+                <!-- phone -->
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" name="phone"
+                    id="" class="form-control form-control-sm"
+                    value="{{values.phone}}"
+                    placeholder="565698959"
+                    >
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input required type="email" name="email" id=""
+                    value="{{values.email}}"
+                    class=" form-control-sm form-control" placeholder="example@gmail.com">
+                </div>
+
+
+                <!-- password -->
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password"
+                    name="password"
+                    id=""
+                     class="form-control form-control-sm" placeholder="********">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Address</label>
+                    <input type="text"
+                    name="address"
+                    id=""
+                     class="form-control form-control-sm" >
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <input class="btn btn-outline-danger" type="submit" value="Create An Account ">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

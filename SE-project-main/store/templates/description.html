@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load cart %}
+{% load custom_filter %}
+{% load static %}
+{% block title %} {{ product.name }} {% endblock %}
+{% block content %}
+
+<div class="services-breadcrumb">
+	<div class="agile_inner_breadcrumb">
+		<div class="container">
+			<ul class="w3_short">
+				<li>
+					<a href="/">Home</a>
+					<i>|</i>
+				</li>
+				<li>
+					<a href="/product">Products</a>
+					<i>|</i>
+				</li>
+				<li>Description</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	<!-- Single Page -->
+	<div class="banner-bootom-w3-agileits py-5">
+		<div class="container py-xl-4 py-lg-2" style = "background:#f7f5f5;">
+			<!-- tittle heading -->
+			<h2 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>{{ product.name }}</span></h2>
+			<!-- //tittle heading -->
+			<div class="row">
+				<div class="col-lg-5 col-md-8 single-right-left ">
+					<div class="grid images_3_of_2">
+						<div class="flexslider">
+							<ul class="slides">
+								<li data-thumb="{{product.image.url}}">
+									<div class="thumb-image">
+										<img src="{{product.image.url}}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+								</li>
+<!--								<li data-thumb="images/si2.jpg">-->
+<!--									<div class="thumb-image">-->
+<!--										<img src="images/si2.jpg" data-imagezoom="true" class="img-fluid" alt=""> </div>-->
+<!--								</li>-->
+<!--								<li data-thumb="images/si3.jpg">-->
+<!--									<div class="thumb-image">-->
+<!--										<img src="images/si3.jpg" data-imagezoom="true" class="img-fluid" alt=""> </div>-->
+<!--								</li>-->
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-7 single-right-left simpleCart_shelfItem" id = 'product'>
+					<h3 class="mb-3">{{ product.brand }}</h3>
+					<p class="mb-3">
+						<span class="item_price font-weight-bold">Rs.{{ product.price }}</span>
+						<del class="mx-2 font-weight-light">Rs.{{ product.saleprice }}</del>
+						<label>Free delivery</label>
+					</p>
+					<div class="single-infoagile">
+						<ul>
+							<li class="mb-3 font-weight-bold">
+								{{ product.description }}
+							</li>
+							<li class="mb-3 font-weight-bold">
+								{{ product.dimensions }}
+							</li>
+							<li class="mb-3 font-weight-bold">
+								EMIs from $655/month.
+							</li>
+							<li class="mb-3 font-weight-bold">
+								Bank OfferExtra 5% off* with Axis Bank Buzz Credit CardT&C
+							</li>
+						</ul>
+					</div>
+					<div class="product-single-w3l font-weight-bold">
+						<p class="my-3">
+							<i class="far fa-hand-point-right mr-2"></i>
+							<label>1 Year</label>Manufacturer Warranty</p>
+						<ul>
+							<li class="mb-1">
+								Cash on Delivery Eligible.
+							</li>
+							<li class="mb-1">
+								Bajaj Finance Available.
+							</li>
+						</ul>
+						<p class="my-sm-4 my-3">
+							<i class="fas fa-retweet mr-3"></i>Net banking & Credit/ Debit/ ATM card accepted on Delivery
+						</p>
+					</div>
+					
+					<div class="occasion-cart">
+						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+							{% if product|is_in_cart:request.session.cart %}
+							<form action="/product/#{{product.id}}" method="post">
+								{% csrf_token %}
+								<fieldset>
+									<input hidden type="text" name='product' value='{{product.id}}'>
+									<input hidden type="text" name='remove' value='True'>
+									<input type="submit" value=" - " class="btn btn-block btn-light border-right">
+								</fieldset>	
+							</form>
+							<div class="text-center col">{{product|cart_quantity:request.session.cart}} in Cart</div>
+							<form action="/product/#{{product.id}}" method="post">
+								{% csrf_token %}
+								<fieldset>
+									<input hidden type="text" name='product' value='{{product.id}}'>
+									<input hidden type="text" name='remove' value='True'>
+									<input type="submit" value=" + " class="btn btn-block btn-light border-right">
+								</fieldset>	
+							</form>	
+							{% else %}
+							<form action="/product/#{{product.id}}" method="post">
+								{% csrf_token %}
+								<fieldset>	
+									<input type="submit" name="submit" value="Add to cart" class="button" />
+								</fieldset>
+							</form>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //Single Page -->
+{% endblock %}

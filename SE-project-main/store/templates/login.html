@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+ <!-- banner-2 -->
+    <!-- <img src={% static "images/img1.png" %}/> -->
+	<!-- //banner-2 -->
+	<!-- page -->
+
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+						<i>|</i>
+					</li>
+					<li>Sign In</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+<div class="container" >
+    <div class="p-4 m-4">
+			<div class="col-lg-4 mt-4 border mb-4 mx-auto rounded pt-4" style = "background:#c8cbcc;">
+				<div class="text-center col">
+					<!-- <hr> -->
+					<h3 class="tittle-w3l mb-lg-5 mb-sm-4 mb-3">
+							<span>S</span>ign
+							<span>I</span>n
+					</h3>
+					<hr>
+				</div>
+				<h3 hidden class="alert alert-light border mt-4 mb-4 rounded">Login Here</h3>
+				<form action="/login/" method="POST">
+
+					{% csrf_token %}
+
+					{% if error%}
+					<div class="alert alert-danger" role="alert">
+						{{error}}
+					</div>
+					{% endif %}
+					<!-- email -->
+					<div class="form-group">
+						<label for="">Email</label>
+						<input required type="email" name="email" id=""
+						value="{{values.email}}"
+						class=" form-control-sm form-control" placeholder="example@gmail.com">
+					</div>
+
+
+					<!-- password -->
+					<div class="form-group">
+						<label for="">Password</label>
+						<input type="password"
+						name="password"
+						id=""
+						 class="form-control form-control-sm" placeholder="********">
+					</div>
+
+					<hr>
+					<div class="form-group">
+						<input class="btn btn-outline-danger" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop" value="Login">
+					</div>
+
+
+				</form>
+			</div>
+			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Sucess</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  </div>
+				  <div class="modal-body">
+					You are been directed to your account!
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Ok</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

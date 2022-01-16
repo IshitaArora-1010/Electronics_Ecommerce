@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+	<!-- banner-2 -->
+	<!-- <img src={% static "images/img1.png" %}/> -->
+	<!-- //banner-2 -->
+
+	<!-- page -->
+	<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		</div>
+		<div class="carousel-inner">
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/Home-Appliances.png' %}" class="d-block w-100" alt="..." style = "width:640px;height:360px" />
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>SALE | SALE | SALE</h5>
+			  <p>Some representative placeholder content for the first slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item active" data-bs-interval="2000">
+			<img src="{% static 'images/img1.png' %}" class="d-block w-100" alt="This is image" style = "width:640px;height:360px"/>
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Second slide label</h5>
+			  <p>Some representative placeholder content for the second slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img2.png' %}" class="d-block w-100" alt="This is image">
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Third slide label</h5>
+			  <p>Some representative placeholder content for the third slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img3.png' %}" class="d-block w-100" alt="This is image">
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Third slide label</h5>
+			  <p>Some representative placeholder content for the third slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img4.png' %}" class="d-block w-100" alt="This is image" style = "width:640px;height:360px"/>
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Second slide label</h5>
+			  <p>Some representative placeholder content for the second slide.</p>
+			</div> -->
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+						<i>|</i>
+					</li>
+					<li>Terms of User</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+	<!-- terms -->
+	<div class="terms py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>T</span>erms
+				<span>O</span>f
+				<span>U</span>se </h3>
+			<!-- //tittle heading -->
+			<h3 class="w3-head w3-secong-head text-capitalize">please read these terms and conditions carefully.</h3>
+
+			<h6 class="my-md-4 my-3">Website Privacy Notice</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">All information we collect on the Services is subject to our Website Privacy Notice. By using this Website and any Materials, you consent to all actions taken by us with respect to your information in compliance with the Website Privacy Notice.</p>
+
+			<h6 class="my-md-4 my-3">Changes to the Terms of Use</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">These Terms of Use may be changed by us, in our sole discretion, from time to time with or without notice to you. Any changes or modifications to these Terms of Use will be effective upon posting on the Website. You should always review these Terms of Use prior to your access or use of the Website or Materials to ensure that you understand the current Terms of Use that apply to your access or use thereof. Your continued use of the Website or Materials following the posting of any changes or modifications will constitute your acceptance of such changes or modifications. If you cannot access these Terms of Use via the Internet, we can provide a copy of the Terms of Use then in effect by email, upon request.</p>
+
+			<h6 class="my-md-4 my-3">Product & Services Information</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">All references on this Website to information, materials, products and/or services apply to information, materials, products and services available in the countries or jurisdictions specified only with respect to such information, materials, products and/or services only, unless otherwise stated. Nothing on this Website constitutes an offer to buy or sell our products or services in any jurisdiction. This Website is for information purposes only.</p>
+
+			<h6 class="my-md-4 my-3">Eligibility</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">The Website and any Materials are offered and available only to users who are of the legal age of consent as defined by applicable law (i.e. 18 years of age or older in the United States). This Website is not intended for use with minors (as defined by applicable law). By using the Website and Materials, you represent and warrant that you are of legal age to form a binding contract with the us and meet all of the foregoing eligibility requirements. If you do not meet all of these requirements, you must not access or use the Website or Materials.</p>
+
+			<h6 class="my-md-4 my-3">Ownership and Permitted Use of Materials</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">Unless otherwise indicated, this Website and its design, text, content, files, selection and arrangement of elements, organization, graphics, compilation, translations, digital conversion and other matters related to, and all trademarks, logos, service marks, symbols, trade dress and all Materials provided on or through this Website are protected by all applicable copyright laws, trademark laws and/or international conventions and treaties. All Materials are the exclusive and proprietary property of Arora Electro World and/or its third-party licensors. ALL RIGHTS RESERVED.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">The posting, display or other provision of any Materials on this Website shall not constitute a waiver of any right or interest of Arora Electro World and/or its third-party licensors in such Materials. Except as expressly provided herein, nothing contained in these Terms of Use or the Website shall be construed as conferring by implication, estoppel or otherwise any license, interest or right in or to the Materials under any copyright, trademark or proprietary rights of Arora Electro World or of any third party. Further, except as otherwise provided herein, no Materials (or portions thereof) may be used, copied, reproduced, distributed or redistributed, published or republished, downloaded, modified, displayed, posted, broadcasted, imitated, adapted, translated, or transmitted in any form or by any means, including, but not limited to, electronic, mechanical, photocopying, recording, or otherwise, or sold, offered for sale, licensed or sublicensed, reverse engineered, disassembled, decompiled or incorporated into compilations or used in the creation of derivative works, without our express prior written permission or that of the respective third-party owner.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">Subject to your compliance with the foregoing, permission is hereby granted to you to the extent necessary for you to lawfully: (a) access this Website and/or Materials made available on or through this Website; and (b) display, download, archive and print in hard copy portions of this Website for your personal or internal business, non-commercial and informational use only.</p>
+
+            <h6 class="my-md-4 my-3">Prohibited Uses</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">You agree not to use the Website to: (a) modify the Materials (or any portion thereof), (b) use the Website and/or the Materials in a manner that is fraudulent, libelous, defamatory, tortious, obscene, threatening, abusive, malicious, offensive, hateful, objectionable, constitutes or encourages a criminal offense, violates the rights of another (including, without limitation, any copyright, trademark, patent, trade secret, privacy, moral or publicity rights or other intellectual property or proprietary rights of others), or otherwise violates or conflicts with these Terms of Use or any applicable law; (c) impersonate any person or entity, or otherwise misrepresent your affiliation with any person or entity; (d) use the Website to interfere, disrupt or attempt to gain unauthorized access to the Materials, other Arora Electro World accounts, any restricted portions of the Website or any computer network or equipment; (e) use any manual or automated software, devices or other processes to “crawl” or “spider” any webpages contained in the Website (including, without limitation, the use of robots, bots, spiders, scrapers or any other means to extract any Materials or other data from the Website); (f) frame or otherwise simulate the appearance or functions of the Website (or any portion thereof); and/or (g) remove or alter any copyright, trademark and other proprietary notices and legends contained in the Materials or on the Website (and any printouts thereof).</p>
+            <p class="font-weight-light pl-sm-4 mb-2">The foregoing permission is for the sole purpose of enabling you to use the Website and enjoy the benefit of the Materials as provided on the Website in the manner permitted by these Terms of Use. We may modify the Materials from time to time and you are solely responsible for ensuring that you are using current and permitted Materials only. The foregoing permission terminates automatically if you breach any of these Terms of Use. Upon termination, you must immediately destroy any and all downloaded, archived or printed copies of the Materials and, if requested by us, certify to us in writing that you have complied with the foregoing.</p>
+
+            <h6 class="my-md-4 my-3">Violations</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">Arora Electro World has the right, in its sole discretion, to terminate your use and access of the Website and any Materials in any and all appropriate circumstances, such as your violation of these Terms of Use.</p>
+
+            <h6 class="my-md-4 my-3">Disclaimer of Endorsement</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">Any references to business or entities, products, processes, or services, or other organizations or individuals that are included on the Website by trade name, trademark or otherwise are provided solely for your information. These references are not intended to reflect the opinions of Arora Electro World concerning the significance, priority or importance to be given the referenced business, entity, product, service, organization or individual. Such references, including any that may relate to our Materials, are not endorsements or approvals by Arora Electro World, and should not be quoted or reproduced for the purpose of stating or implying endorsement or approval by Arora Electro World.</p>
+
+            <h6 class="my-md-4 my-3">User-Generated Content</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">You may from time to time be permitted to post content on the Website, submit emails or otherwise provide content to us in connection with your use of the Website or Materials (“User-Generated Content”). Any communication or material you post on the Website or transmit to us over the Internet is, and will be treated as non-confidential and non-proprietary and is and will be solely your responsibility. This does not include User-Generated Content collected by us or provided to us by way of our paid products and services that are governed by the Terms of Service and the Product Privacy Notice. Upon the transmission of any User-Generated Content to us, you expressly and hereby grant us a perpetual, worldwide, royalty-free, irrevocable, transferable, sublicensable and non-exclusive permission to reproduce, display, publish, modify, distribute, disseminate and/or otherwise use or exploit such content for any lawful purpose, without compensation, notice or obligation to you, subject to ourWebsite Privacy Notice. We are not required to use or return any User-Generated Content submitted to us. You represent and warrant that you own or otherwise control all rights, including, but not limited to, copyrights, in and to any such User-Generated Content, that all moral rights in and to any such User-Generated Content have been waived, and that the use of such User-Generated Content as permitted hereunder does not and will not infringe or violate the rights of any third party. All derivative works or other developments arising from or based on User-Generated Content, if created by us, shall be our exclusive property.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">The posting or transmittal of any unlawful, threatening, libelous, defamatory, obscene, pornographic or profane material or any material that could constitute or encourage conduct that would be considered a criminal offense or violation of any law is strictly prohibited. Under no circumstances shall we be liable for any such material posted or transmitted by you by or through the Website.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">We reserve the right to monitor your communications with us whether by mail, voice, fax, email or any other form of transmission for the purposes of quality control, security and other business needs.</p>
+
+            <h6 class="my-md-4 my-3">Feedback</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">You may provide us with suggestions, comments or other feedback (collectively, “Feedback”) with respect to our products, services, content, this website, or other materials. Feedback is voluntary. We are not obligated to hold it in confidence. We may use Feedback for any purpose without obligation of any kind. To the extent a license is required to make use of any intellectual property in any such Feedback, you hereby grant us an irrevocable, non-exclusive, perpetual, royalty-free license to use the Feedback in connection with Arora Electro World’s business, including the enhancement of our products, services, content, this website, or other materials.</p>
+
+            <h6 class="my-md-4 my-3">Statements on Website</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">The documents contained on (or directly accessible from) this Website may contain a number of forward-looking statements. Any statements that are not statements of historical fact (including, without limitation, statements to the effect that Arora Electro World or its management “believes,” “expects,” “anticipates” “plans” and other similar expressions) should be considered forward-looking statements and should not be relied upon. There are a number of important factors that could cause Arora Electro World’s actual results to differ materially from those indicated by such forward-looking statements, including general economic conditions, our continued ability to develop and introduce products, the introduction of new products by competitors, pricing practices of competitors, expansion of its sales distribution capability, the cost and availability of components, undetected software errors or bugs, our ability to control costs and other risk factors.</p>
+
+            <h6 class="my-md-4 my-3">No Warranties</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">WE MAKE NO REPRESENTATIONS OR WARRANTIES WITH RESPECT TO THIS WEBSITE OR THE MATERIALS, WHICH ARE PROVIDED “AS IS.” WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, QUALITY AND FITNESS FOR A PARTICULAR PURPOSE, WITH RESPECT TO THIS WEBSITE, THE MATERIALS AND ANY WEBSITE WITH WHICH THIS WEBSITE IS LINKED. YOU ARE SOLELY RESPONSIBLE FOR PROVIDING, MAINTAINING AND ENSURING THE COMPATIBILITY OF ALL HARDWARE, SOFTWARE AND OTHER COMPUTER REQUIREMENTS NECESSARY FOR YOUR ACCESS TO AND USE OF THE WEBSITE AND THE MATERIALS. WE ALSO MAKE NO REPRESENTATIONS OR WARRANTIES AS TO WHETHER (A) THE INFORMATION ACCESSIBLE VIA THIS WEBSITE, OR ANY WEBSITE WITH WHICH IT IS LINKED, IS ACCURATE, RELIABLE, COMPLETE, OR CURRENT, (B) USE OF THE WEBSITE AND ACCESS TO THE MATERIALS WILL BE UNINTERRUPTED OR ERROR-FREE, (C) THE WEBSITE AND THE MATERIALS WILL BE AVAILABLE AT ANY PARTICULAR TIME, OR (D) THE WEBSITE AND THE MATERIALS ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. NEITHER WE NOR ANY THIRD-PARTY LICENSOR WILL BE LIABLE WITH RESPECT TO ANY DECISIONS MADE BY YOU OR ANY OTHER PERSON AS A RESULT OF RELIANCE ON THE WEBSITE OR ANY MATERIALS. BECAUSE SOME JURISDICTIONS DO NOT PERMIT THE EXCLUSION OF CERTAIN WARRANTIES, THESE EXCLUSIONS MAY NOT APPLY TO YOU. YOU ACCEPT THAT OUR SHAREHOLDERS, OWNERS, OFFICERS, DIRECTORS, EMPLOYEES AND OTHER REPRESENTATIVES SHALL HAVE THE BENEFIT OF THIS CLAUSE.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">Your use of the Website and the Materials is at your sole risk. It is your responsibility to evaluate (or consider seeking professional advice on) the accuracy and completeness of all information, statements, opinions and other material on this Website or any website with which it is linked.</p>
+            <p class="font-weight-light pl-sm-4 mb-2">Your statutory rights as a consumer, if any, are not affected by these provisions, and we do not seek to exclude or limit liability for fraudulent misrepresentation.</p>
+
+            <h6 class="my-md-4 my-3">Exclusion of Liability</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">To the fullest extent permitted by applicable law, neither we nor any of our shareholders, officers, directors, representatives, employees, agents, third-party licensors, suppliers, and contractors shall be liable for any losses and/or expenses of whatever nature, howsoever arising and regardless of the legal theory of liability, including, without limitation, any direct, indirect, special, punitive, incidental or consequential damages, loss of or inability to use, loss of data, loss caused by a virus, loss of income or profit, loss of or damage to property, claims of third parties, or other losses of any kind or character, even if we have been advised of the possibility of such damages, expenses or losses and even if an exclusive remedy provided for herein fails of its essential purpose, arising out of or in connection with your access or use of, or inability to use, this Website or the Materials or any website with which this Website is linked. If you are dissatisfied with the Website or any Materials, your sole and exclusive remedy shall be to discontinue use of the Website and Materials and terminate these Terms of Use in accordance with its terms. To the maximum extent permitted by law, in no event shall Arora Electro World’s or any third-party licensor’s total liability to you for damages, losses and causes of action (whether in contract, tort (including, but not limited to, negligence or otherwise) exceed in the aggregate amount paid by you, if any, for accessing the Website or Materials.</p>
+
+            <h6 class="my-md-4 my-3">Indemnity and Release</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">You agree to defend, indemnify, release and hold us harmless as well as our shareholders, officers, directors, agents, representatives, employees and third-party licensors from any and all claims, liabilities, losses, expenses or demands, including reasonable legal fees, based on, arising from, or otherwise related to: (a) your breach or violation of these Terms of Use; (b) your access or use of this Website or any of the information, materials, products or services made available on or through this Website; (c) any infringement or misappropriation by you of any intellectual property or other rights of Arora Electro World or any third party; or (d) any negligence or willful misconduct by you.</p>
+
+            <h6 class="my-md-4 my-3">Modification and Discontinuation</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">We reserve the right at any time and from time to time to modify, edit, delete, suspend or discontinue, temporarily or permanently, this Website (or any portion thereof) and/or the information, materials, products and/or services made available on or through this Website (or any part thereof) with or without notice. You agree that we shall not be liable to you or to any third party for any such modification, editing, deletion, suspension or discontinuance of this Website. Termination and Survival</p>
+            <p class="font-weight-light pl-sm-4 mb-2">These Terms of Use will remain in effect until terminated by you or us. You may terminate these Terms of Use at any time by ceasing your use and access of the Website and Materials and by destroying all materials that you have saved, printed or downloaded from the Website. Notwithstanding any of the terms and conditions contained herein, we reserve the right, without notice and at our sole discretion, to terminate your permission to use the Website, and to block or prevent future access to and use of the Website and Materials. The provisions of these Terms of Use that by their nature and content are intended to survive the expiration or termination of these Terms of Use will survive such termination or expiration.</p>
+
+            <h6 class="my-md-4 my-3">Entire Understanding</h6>
+			<p class="font-weight-light pl-sm-4 mb-2">These Terms of Use contain the entire understanding between you and us with respect to this Website and your use and access hereof and supersedes all representations, statements, inducements, understandings, arrangements and agreements, oral or written, between you and us relating thereto unless otherwise signed in writing by authorized representatives of the parties, provided should there be a conflict between these Terms of Use and any written agreement between you and Arora Electro World related to your use of the Website, the terms of such written agreement shall control. Should any part of these Terms of Use for any reason be declared invalid, void or unenforceable by a court of competent jurisdiction, such determination shall not affect the validity of any remaining portions and such remaining portions shall remain and continue in full force and effect to the maximum extent permitted by law. Our failure to enforce any provision of these Terms of Use shall not operate as or be deemed a waiver by us of any other breach of any such provision or any other provision herein or of the right to enforce such provision(s).</p>
+
+		</div>
+	</div>
+	<!-- //terms -->
+{% endblock %}

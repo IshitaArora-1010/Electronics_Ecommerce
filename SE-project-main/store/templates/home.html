@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+	<!-- //Custom-Files -->
+
+	<!-- web fonts -->
+	<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+	    rel="stylesheet">
+	<!-- //web fonts -->
+	<style type="text/css">
+		.dropdown-menu-dark .dropdown-item {
+			color: #0a0a0ad9;
+		}
+	</style>
+
+<!--		</div>-->
+<!--	</div>-->
+	<!-- //navigation -->
+
+	<!-- banner-2 -->
+    <!-- <img src={% static 'images/img1.png' %}/> -->
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		</div>
+		<div class="carousel-inner">
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/Home-Appliances.png' %}" class="d-block w-100" alt="..." style = "width:640px;height:360px" />
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>SALE | SALE | SALE</h5>
+			  <p>Some representative placeholder content for the first slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item active" data-bs-interval="2000">
+			<img src="{% static 'images/img1.png' %}" class="d-block w-100" alt="This is image" style = "width:640px;height:360px"/>
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Second slide label</h5>
+			  <p>Some representative placeholder content for the second slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img2.png' %}" class="d-block w-100" alt="This is image">
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Third slide label</h5>
+			  <p>Some representative placeholder content for the third slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img3.png' %}" class="d-block w-100" alt="This is image">
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Third slide label</h5>
+			  <p>Some representative placeholder content for the third slide.</p>
+			</div> -->
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="{% static 'images/img4.png' %}" class="d-block w-100" alt="This is image" style = "width:640px;height:360px"/>
+			<!-- <div class="carousel-caption d-none d-md-block">
+			  <h5>Second slide label</h5>
+			  <p>Some representative placeholder content for the second slide.</p>
+			</div> -->
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+	<!-- about -->
+	<div class="welcome py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>H</span>ome</h3>
+
+			<!-- //tittle heading -->
+			<div class="row">
+				<div class="col-lg-6 welcome-left">
+					<h3>Welcome</h3>
+					<h4 class="my-sm-3 my-2">Arora Electro World is an online platform for Arora Radio & Electric Works, a wholesale distributor of Electronics and Home Appliances located in Ludhiana, Punjab.</h4>
+					<p>A one stop shop for all of your electronic needs.We deal in LED TVs, Air Conditioners, Refrigerators, Washing Machines , Coolers , Microwaves and Ovens, Water Purifiers, Induction Cooktops, Irons, Hair Straightners, Electric Kettles, Juicer Mixers & Electric Handblenders</p>
+				</div>
+				<div class="col-lg-6 welcome-right-top mt-lg-0 mt-sm-5 mt-4">
+					<img src="{% static 'images/Electronica.png' %}" class="img-fluid" alt=" ">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
+
+	<!-- testimonials -->
+	<div class="testimonials py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center text-white mb-lg-5 mb-sm-4 mb-3">
+				<span>O</span>ur
+				<span>C</span>ustomers
+				<span>R</span>eviews</h3>
+			<!-- tittle heading -->
+			<div class="row gallery-index">
+				<div class="col-sm-6 med-testi-grid">
+					<div class="med-testi test-tooltip rounded p-4">
+						<p>"The support I received was timely and my issue was addressed with a single interaction.Awesome!"</p>
+					</div>
+					<div class="row med-testi-left my-5">
+						<div class="col-lg-2 col-3 w3ls-med-testi-img">
+							<img src={% static "images/user.jpg" %} alt=" " class="img-fluid rounded-circle" />
+						</div>
+						<div class="col-lg-10 col-9 med-testi-txt">
+							<h4 class="font-weight-bold mb-lg-1 mb-2">Gagandeep Singh</h4>
+							<p>Ludhiana</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 med-testi-grid">
+					<div class="med-testi test-tooltip rounded p-4">
+						<p>"Great place to buy electronics from with a very good after service!"</p>
+					</div>
+					<div class="row med-testi-left my-5">
+						<div class="col-lg-2 col-3 w3ls-med-testi-img">
+							<img src={% static "images/user.jpg" %} alt=" " class="img-fluid rounded-circle" />
+						</div>
+						<div class="col-lg-10 col-9 med-testi-txt">
+							<h4 class="font-weight-bold mb-lg-1 mb-2">Karanpreet Kaur</h4>
+							<p>Ludhiana</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 med-testi-grid">
+					<div class="med-testi test-tooltip rounded p-4">
+						<p>"I had an awesome experience buying from here, good deals with affordable prices."</p>
+					</div>
+					<div class="row med-testi-left mt-sm-5 my-5">
+						<div class="col-lg-2 col-3 w3ls-med-testi-img">
+							<img src={% static "images/user.jpg" %} alt=" " class="img-fluid rounded-circle" />
+						</div>
+						<div class="col-lg-10 col-9 med-testi-txt">
+							<h4 class="font-weight-bold mb-lg-1 mb-2">Harman</h4>
+							<p>Ludhiana</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 med-testi-grid">
+					<div class="med-testi test-tooltip rounded p-4">
+						<p>"The dealer is soft spoken and the showroom offers variety of products.Amazing experience!"</p>
+					</div>
+					<div class="row med-testi-left mt-5">
+						<div class="col-lg-2 col-3 w3ls-med-testi-img">
+							<img src={% static "images/user.jpg" %} alt=" " class="img-fluid rounded-circle" />
+						</div>
+						<div class="col-lg-10 col-9 med-testi-txt">
+							<h4 class="font-weight-bold mb-lg-1 mb-2">Jessie</h4>
+							<p>Ludhiana</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //testimonials -->
+{% endblock %}
+
+{% block javascripts %}
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>-->
+{% endblock javascripts %}

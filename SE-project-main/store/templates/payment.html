@@ -1,0 +1,146 @@
+  {% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+{% load cart %}
+
+<!-- banner-2 -->
+	 <!-- <img src={% static "images/img1.png" %}/> -->
+	<!-- //banner-2 -->
+	<!-- page -->
+    <head>
+    <!-- Add meta tags for mobile and IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> PayPal Smart Payment Buttons Integration | Server Demo </title>
+    </head>
+
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="/">Home</a>
+						<i>|</i>
+					</li>
+					<li>Payment</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+   <div class="faqs-w3l py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+            <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3 pt-3">
+                <span>P</span>ayment
+            </h3>
+            <!-- //tittle heading -->
+                <div class="pb-4">
+                    <h3 class="w3-head">Choose the online payment method to place order and proceed to checkout</h3>
+                </div>
+                <!-- <div class="pb-3 pt-3">
+                    <a href="#" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-info border rounded col-lg-3">Cash on Delivery</a>
+                </div> -->
+                <div class="pb-3 pt-3">
+                    <div id="paypal-button-container"></div>
+                </div>
+                <div class="pb-3 pt-3">
+                    <a href="/orders" class="btn btn-outline-info border rounded col-lg-3">Checkout</a>
+                </div>
+
+   <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cash on delivery selected!
+          </h5>
+          <hr>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="m-2 p-3">
+           <label for="">Click on proceed to enter delivery details</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> -->
+  {% endblock %}
+  {% block javascripts %}
+  <!-- Include the PayPal JavaScript SDK -->
+  <div id="paypal-button-container"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Adw7xxhjDCk19dfRgusKRUukmCYbhvlDNj8LzGTBpkvwqEwjRlcR_SO64njSUiX0JlgZ3uUDoTvIWo5J&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            // Call your server to set up the transaction
+            createOrder: function(data, actions) {
+                return fetch('/demo/checkout/api/paypal/order/create/', {
+                    method: 'post'
+                }).then(function(res) {
+                    return res.json();
+                }).then(function(orderData) {
+                    return orderData.id;
+                });
+            },
+
+            // Call your server to finalize the transaction
+            onApprove: function(data, actions) {
+                return fetch('/demo/checkout/api/paypal/order/' + data.orderID + '/capture/', {
+                    method: 'post'
+                }).then(function(res) {
+                    return res.json();
+                }).then(function(orderData) {
+                    // Three cases to handle:
+                    //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+                    //   (2) Other non-recoverable errors -> Show a failure message
+                    //   (3) Successful transaction -> Show confirmation or thank you
+
+                    // This example reads a v2/checkout/orders capture response, propagated from the server
+                    // You could use a different API or structure for your 'orderData'
+                    var errorDetail = Array.isArray(orderData.details) && orderData.details[0];
+
+                    if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
+                        return actions.restart(); // Recoverable state, per:
+                        // https://developer.paypal.com/docs/checkout/integration-features/funding-failure/
+                    }
+
+                    if (errorDetail) {
+                        var msg = 'Sorry, your transaction could not be processed.';
+                        if (errorDetail.description) msg += '\n\n' + errorDetail.description;
+                        if (orderData.debug_id) msg += ' (' + orderData.debug_id + ')';
+                        return alert(msg); // Show a failure message
+                    }
+
+                    // Show a success message
+                    alert('Transaction completed by ' + orderData.payer.name.given_name);
+                });
+            },
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '88.44'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+
+        }).render('#paypal-button-container');
+    </script>
+{% endblock javascripts %}
